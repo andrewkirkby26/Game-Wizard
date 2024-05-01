@@ -1,0 +1,35 @@
+.popup_wrapper {
+    height: auto;
+    position: relative;
+    padding: .8rem;
+}
+
+/* Large */
+@media (min-aspect-ratio: 1/1) {
+    .popup_wrapper {
+        width: 60vw;
+    }
+}
+
+/* Small */
+@media (max-aspect-ratio: 1/1) {
+    .popup_wrapper {
+        width: 90vw;
+    }
+
+}
+
+mat-card-header {
+    background-color: #12516f;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+mat-card {
+    padding: 0 !important;
+    padding-bottom: .5rem !important;
+}
+
+mat-card-title {
+    margin-top: -.5rem !important;
+}

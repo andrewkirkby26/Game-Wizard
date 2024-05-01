@@ -1,0 +1,125 @@
+board {
+    width: calc(80vh * 1.51);
+    height: 80vh;
+    margin-top: -3vh;
+    display: inline-block;
+    transform: scale(.85);
+    transform-origin: center;
+}
+
+.pageContainer {
+    background-image: url("../../../../resources/images/background.avif");
+    background-size: cover;
+    /*background-repeat: repeat;*/
+}
+
+.player_hand_container {
+    position: fixed;
+    bottom: 3rem;
+    width: 100%;
+    left: 0%;
+    z-index: 30;
+    text-align: center;
+    height: calc(10.5rem * 1.39);
+}
+
+.chatIcon {
+    position: absolute;
+    bottom: 3rem;
+    right: 25rem;
+    height: 5rem;
+    width: 5rem;
+    z-index: 35;
+}
+
+.extra_child {
+    height: 5rem;
+    width: 5rem;
+    margin-left: 1rem;
+    display: inline-block;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.roundLabel {
+    width: 100%;
+    display: inline-block;
+    height: 2rem;
+    margin-top: .4rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-align: center;
+    color: white;
+}
+
+playedCards {
+    position: relative;
+    height: 15rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.extras {
+    top: calc(7rem);
+    width: calc(100% - 40rem);
+    text-align: center;
+    left: 20rem;
+    position: absolute;
+    height: 20rem;
+}
+
+.extra_child {
+    height: 5rem;
+    width: 5rem;
+    margin-left: 1rem;
+    display: inline-block;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.icon {
+    width: 2.5rem;
+    height: calc(2.5rem * 1.39);
+    position: absolute;
+    left: 1.9rem;
+    font-size: 2.5rem;
+    z-index: 10;
+    color: white;
+    top: 2.3rem
+}
+
+card {
+    width: 2.5rem;
+    height: calc(2.5rem * 1.39);
+    display: inline-block;
+    position: relative;
+    transition: all .5s;
+    transform-origin: center;
+    z-index: 5;
+    border: 1px solid white;
+    border-radius: .3rem;
+    width: 2.5rem;
+    height: calc(2.5rem * 1.39);
+}
+
+card:hover {
+    z-index: 10 !important;
+}
+
+.trumpCard {
+    width: 2.5rem;
+    height: calc(2.5rem * 1.39);
+    position: absolute;
+    top: 1rem;
+    left: calc(50% - 1.25rem);
+}
+
+.label {
+    width: 100%;
+    text-align: center;
+    height: 1.3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    color: white;
+}

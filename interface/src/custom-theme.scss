@@ -1,0 +1,251 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$palette_light_accent: (
+        50: #12a4ef,
+        100: #12a4ef,
+        200: #12a4ef,
+        300: #12a4ef,
+        400: #12a4ef,
+        500: #12a4ef,
+        600: #12a4ef,
+        700: #12a4ef,
+        800: #12a4ef,
+        900: #12a4ef,
+        contrast: (
+                50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: white,
+                400: white,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+        )
+);
+
+$palette_light_primary: (
+        50: #12516f,
+        100: #12516f,
+        200: #12516f,
+        300: #12516f,
+        400: #12516f,
+        500: #12516f,
+        600: #12516f,
+        700: #12516f,
+        800: #12516f,
+        900: #12516f,
+        contrast: (
+                50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: white,
+                400: white,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+        )
+);
+
+$palette_dark_accent: (
+        50: #12a4ef,
+        100: #12a4ef,
+        200: #12a4ef,
+        300: #12a4ef,
+        400: #12a4ef,
+        500: #12a4ef,
+        600: #12a4ef,
+        700: #12a4ef,
+        800: #12a4ef,
+        900: #12a4ef,
+        contrast: (
+                50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: white,
+                400: white,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+        )
+);
+
+$palette_dark_primary: (
+        50: #12516f,
+        100: #12516f,
+        200: #12516f,
+        300: #12516f,
+        400: #12516f,
+        500: #12516f,
+        600: #12516f,
+        700: #12516f,
+        800: #12516f,
+        900: #12516f,
+        contrast: (
+                50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: white,
+                400: white,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+        )
+);
+
+
+
+// Define a light theme
+$light-accent: mat.define-palette($palette_light_accent);
+$light-primary: mat.define-palette($palette_light_primary);
+$light-theme: mat.define-light-theme(
+                (
+                        color: (
+                                primary: $light-primary,
+                                accent: $light-accent
+                        ),
+                )
+);
+
+// Define a dark theme
+$dark-accent: mat.define-palette($palette_dark_accent);
+$dark-primary: mat.define-palette($palette_dark_primary);
+$dark-theme: mat.define-dark-theme(
+                (
+                        color: (
+                                primary: $dark-primary,
+                                accent: $dark-accent,
+                        ),
+                )
+);
+
+.color-scheme-dark {
+  @include mat.all-component-colors($dark-theme);
+  // Example how you can easy add own custom styles
+  .card-wrapper {
+    color: #d0d0d0;
+  }
+}
+
+.color-scheme-light {
+  @include mat.all-component-colors($light-theme);
+  // Example how you can easy add own custom styles
+  .card-wrapper {
+    color: #2d2d2d;
+  }
+}
+
+:root {
+  --primary: #12516f;
+  --accent: #419ecb;
+  --background: #e5e3e3;
+  --dark: #032b3f;
+  --black: #1c1c1c;
+  --light: rgb(240 240 240);
+  --gray: rgb(173, 173, 173);
+  --dark-gray: rgb(63, 63, 63);
+  --white: white;
+  --height: 5rem;
+  --player-background-color: rgba(200,0,0,.5)
+}
+
+[theme='dark'] {
+  --primary: #12516f;
+  --accent: #419ecb;
+  --background: #7e7e7e;
+  --dark: #032b3f;
+  --black: rgb(217, 217, 217);
+  --light: rgb(110, 110, 110);
+  --gray: rgb(173, 173, 173);
+  --dark-gray: rgb(217, 217, 217);
+  --white: white;
+}
+
+.mat-white {
+  color: white !important;
+}
+
+.mat-black {
+  color: black !important;
+}
+
+.mat-green {
+  color: rgb(0, 137, 43) !important;
+}
+
+.mat-purple {
+  color: rgb(161, 0, 161) !important;
+}
+
+.mat-orange {
+  color: #fab746 !important;
+}
+
+.mat-gray {
+  color: rgb(115, 115, 115) !important;
+}
+
+.mat-red {
+  color: #f44336 !important;
+}
+
+.mat-blue {
+  color: #12516f !important;
+}
+
+.mat-light {
+  color: var(--light) !important;
+}
+
+.mat-light-gray {
+  color: #cbcbcb !important;
+}
+
+.mat-dark-gray {
+  color: var(--dark-gray) !important;
+}
+
+.mat-background-green {
+  background-color: rgb(0, 137, 43) !important;
+  color: white !important;
+}
+
+.mat-background-white {
+  background-color: white!important;
+}
+.mat-background-purple {
+  background-color: rgb(161, 0, 161) !important;
+  color: white !important;
+}
+
+.mat-background-gray {
+  background-color: rgb(115, 115, 115) !important;
+  color: white !important;
+}
+
+.mat-background-orange {
+  background-color: #fab746 !important;
+}
+
+.mat-background-red {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.mat-background-blue {
+  background-color: #12516f !important;
+  color: white !important;
+}
+
+.mat-background-light-gray {
+  background-color: #cbcbcb !important;
+  color: black !important;
+}

@@ -1,0 +1,79 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    z-index: 5;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all .25s;
+    border-radius: .3rem;
+    z-index: 5;
+    background-color: black;
+}
+
+.small {
+
+}
+
+.value {
+    font-size: 2rem;
+    font-weight: 500;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transition: unset;
+    transform: translateY(-50%);
+    left: 0px;
+    text-align: center;
+}
+
+.bigText {
+    font-size: 4rem;
+}
+
+.topLeft {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.bottomRight {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.cardCanPick:hover {
+    transform: scale(1.3) translate(0, -50%);
+    z-index: 10 !important;
+}
+
+.Green {
+    background-color: green;
+}
+
+.Yellow {
+    background-color: yellow;
+}
+
+.Red {
+    background-color: red;
+}
+
+.Blue {
+    background-color: blue;
+}
+
+.noColor {
+    background-color: black;
+    color: white;
+}

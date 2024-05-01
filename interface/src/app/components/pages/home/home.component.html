@@ -1,0 +1,34 @@
+<div class="pageContainer">
+    <div class="gameList floatLeft">
+        <button [disabled]='!authenticationService.user' (click)="eventService.showDialogByNameReq.emit(Constants.DIALOG_NEW_GAME)" class="floatLeft positionRelative ">New Game</button>
+        <mat-list class="floatLeft positionRelative fullWidth">
+            <span>List of users</span>
+            <div *ngFor='let user of authenticationService.allUsers'>
+                <mat-list-item  *ngIf='user._id != authenticationService.user?._id'>
+                    {{user.displayName}}
+                </mat-list-item>
+            </div>
+        </mat-list>
+    </div>
+
+    <mat-list role="list" class="gameList">
+        <span>Games you're playing</span>
+        <mat-list-item role="listitem" *ngFor="let game of gameService.gamesPlaying" (click)="navigationService.selectGame(game)">
+            <div>
+                {{game.config.name}}
+                <br>
+                {{game.status.state}}
+                <br>
+                {{game.isPlayersTurn(this.authenticationService.user!._id!) ? 'YOUR TURN!' : 'not your turn'}}
+            </div>
+        </mat-list-item>
+    </mat-list>
+    <mat-list role="list" class="gameList">
+        <span>Games you're invited to</span>
+        <mat-list-item role="listitem" *ngFor="let game of gameService.gamesInvitedTo" (click)="viewInvite(game)">
+            <div>
+                {{game.config.name}}
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>

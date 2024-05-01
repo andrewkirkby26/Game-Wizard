@@ -1,0 +1,3 @@
+<div *ngIf='player' class="container" >
+    <card *ngFor='let card of player.hand; let i = index' [ngClass]='{"small" : small, "large" : !small}' [big]='!small' [card]="card"></card>
+</div>

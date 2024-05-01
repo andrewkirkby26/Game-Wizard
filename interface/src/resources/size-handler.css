@@ -1,0 +1,15 @@
+/* Add the below selectors to your component to control how it looks in each size */
+
+/* Large */
+@media (min-aspect-ratio: 1/1) {
+    html {
+        font-size: 15px;
+    }
+}
+
+/* Small */
+@media (max-aspect-ratio: 1/1) {
+    html {
+        font-size: 15px;
+    }
+}

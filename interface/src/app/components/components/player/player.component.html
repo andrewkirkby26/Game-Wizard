@@ -1,0 +1,21 @@
+<div *ngIf='player' class="container active" [ngClass]="'index' + index + 'index ' + (active ? 'active ' : ' ')  + (player.getPlayerId() == gameService.currentGame?.activePlayerId ? 'border' : '')" >
+    <div class="entire" style="background-color: rgb(148, 141, 141)">
+        <div class="floatLeft positionRelative fullHeight fullWidth " style="z-index: 3">
+            <img class="avatar" [src]="player.user.photoURL"/>
+            <div class="player_index" >{{index + 1}}</div>
+            <div class="name_container">
+                <div class="player_name">{{player.user.displayName}}</div>
+                <div class="dealer" *ngIf="gameService.currentGame?.getCurrentRound()?.dealingPlayerId == player.getPlayerId()">Dealer</div>
+            </div>
+            <div class="man_container">
+                <mat-icon class=" man_icon">sports_score</mat-icon>
+                <div class="man_count" >{{gameService.currentGame?.getPlayerById(player.getPlayerId())!.score | checkForEmpty}}</div>
+            </div>
+            <div class="man_container">
+                <mat-icon class=" man_icon">casino</mat-icon>
+                <div class="man_count" style="left: .5rem">{{gameService.currentGame?.getCurrentRound()?.numPointsPlayerWon(player.getPlayerId()) | checkForEmpty}} / {{player.bet | checkForEmpty}}</div>
+            </div>
+        </div>
+    </div>
+    <hand  [player]='player' [small]='true' class="player_hand_container" ></hand>
+</div>

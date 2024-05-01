@@ -1,0 +1,33 @@
+<div class="container" *ngIf="gameService.currentGame">
+    <div class="title">Chat</div>
+    <button mat-icon-button class="close"(click)="navigationService.closeChat()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="messages">
+        <div *ngFor='let message of gameService.currentMessages | sortJsonListBy:"createTime": false' class="message" >
+            <div *ngIf="!message.isNotification()" class="fullWidth positionRelative autoHeight" style="min-height: 5rem">
+                <img *ngIf="message.authorUserId" class="userImage" [src]="gameService.currentGame.getPlayerById(message.authorUserId)!.user.photoURL" [ngClass]="{'floatLeft': message.authorUserId != authenticationService.user?._id, 'floatRight': message.authorUserId == authenticationService.user?._id}"/>
+                <div *ngIf="message.authorUserId" class="userName" [ngClass]="{'floatLeft': message.authorUserId != authenticationService.user?._id, 'floatRight': message.authorUserId == authenticationService.user?._id}">{{gameService.currentGame.getPlayerById(message.authorUserId)!.user.displayName}}</div>
+                <div class="time" [ngClass]="{'floatRight': message.authorUserId != authenticationService.user?._id, 'floatLeft': message.authorUserId == authenticationService.user?._id}">{{message.createTime | unichToDayTime}}</div>
+                <div class="text" [ngClass]="{'leftText': message.authorUserId != authenticationService.user?._id, 'rightText': message.authorUserId == authenticationService.user?._id}">{{message.text}}</div>
+            </div>
+            <div *ngIf="message.isNotification() && showGameNotis" class="notification color-gray">
+                {{message.text}}
+            </div>
+        </div>
+
+        <div *ngIf="gameService.currentMessages.length <= 0" class="fullWidth centerText floatLeft autoHeight positionRelative middleHeight">No Messages</div>
+    </div>
+
+    <mat-divider class="floatLeft positionRelative fullWidth" style="margin-bottom: .5rem;margin-top: .5rem;"></mat-divider>
+    <mat-form-field class="textBox">
+        <mat-label>Message</mat-label>
+        <textarea matInput id='textArea' placeholder="" (keydown)='$event.key == "Enter" ? sendMessage() : null' [(ngModel)]="message" class="textBox" style="top: 2rem !important;"></textarea>
+    </mat-form-field>
+    <mat-action-row class="floatLeft positionRelative fullWidth autoHeight" align="end">
+        <mat-slide-toggle [(ngModel)]="showGameNotis"  (ngModelChange)="setShowNotis()" class="toggle mat-gray" color="primary">Show Game Alerts</mat-slide-toggle>
+        <button mat-raised-button (click)="message = ''">Clear</button>
+        <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+    </mat-action-row>
+</div>

@@ -1,0 +1,38 @@
+.pageContainer {
+    position: relative;
+    float: left;
+    width: calc(100% - 1.4rem);
+    padding: .7rem;
+    height: calc(100% - 10vh);
+    z-index: 4;
+}
+
+
+.pageTitleContainer {
+    font-size: 2.3rem;
+    float:left;
+    position: relative;
+    height: 3rem;
+    margin-bottom: .4rem;
+    width: 100%;
+} 
+
+.pageContent {
+    float:left;
+    position: relative;
+    height: calc(100% - 0rem);
+    width: 100%;
+    max-height: calc(100% - 0rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+} 
+
+.backArrow {
+    font-size: 1.8rem;
+    float: left;
+    margin-top: 0.6rem;
+    position: relative;
+    margin-right: 0.3rem;
+    height: auto;
+    width: auto;
+}

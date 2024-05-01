@@ -1,0 +1,126 @@
+.container {
+    width: 25vw;
+    height: auto;
+    max-height: 80vh;
+    min-height: 5rem;
+    position: relative;
+    float: left;
+}
+
+.topRow {
+    float: left;
+    width: 100%;
+    height: 2.5rem;
+    position: relative;
+}
+
+.close {
+    float: right;
+    font-size: 1.6rem;
+    color: black;
+    height: 100%;
+    position: relative;
+}
+
+.title {
+    float: left;
+    position: relative;
+    margin: .3rem;
+    width: auto;
+    height: 100%;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.messages {
+    float: left;
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-anchor: auto !important;
+    overflow-y: auto;
+    max-height: 40vh;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 8rem;
+    width: 100%;
+}
+
+.notification {
+    width: 100%;
+    position: relative;
+    float: left;
+    height: auto;
+    min-height: 1.5rem;
+    font-size: 1rem;;
+    line-height: 1.1rem;
+    text-align: center;
+}
+
+.message {
+    float: left;
+    height: auto;
+    /*min-height: 5rem;*/
+    width: 100%;
+    transform: translateZ(0);
+    position: relative;
+}
+
+.text {
+    float: left;
+    height: auto;
+    position: relative;
+    min-height: 2rem;
+    width: calc(100% - 4rem);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--dark-gray);
+}
+
+.textBox {
+    float: left;
+    height: 8rem !important;
+    overflow-y: auto;
+    max-height: 8rem;
+    position: relative;
+    min-height: 2rem;
+    width: 100%;
+}
+
+.userImage {
+    border-radius: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    margin: .3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.userName {
+    position: relative;
+    width: auto;
+    height: 2rem;
+    margin: .3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.time {
+    position: relative;
+    width: auto;
+    height: 2rem;
+    margin: .3rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.4rem;
+    color: var(--dark-gray);
+}
+
+.toggle {
+    float:left;
+    position: relative;
+    font-size: 1rem;
+    margin-top: .6rem;
+}

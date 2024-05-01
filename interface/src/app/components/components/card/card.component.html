@@ -1,0 +1,12 @@
+<div *ngIf='card' class="container">
+    <div class="card" [ngClass]="{'selectable': isSelectable()}" (click)="playCard()">
+        <div class="card" [ngClass]="(isVisible() && card.color) ? card.color : 'noColor'">
+            <div class="value" *ngIf='isVisible()' [ngClass]="{'bigText' : big}">
+                {{ card.isNumber() ? card.value : (card.isWizard() ? 'W' : 'N')}}
+            </div>
+            <div *ngIf='big && isVisible()' class="topLeft">{{ card.isNumber() ? card.value : (card.isWizard() ? 'W' : 'N')}}</div>
+            <div *ngIf='big && isVisible()' class="bottomRight">{{ card.isNumber() ? card.value : (card.isWizard() ? 'W' : 'N')}}</div>
+
+        </div>
+    </div>
+</div>

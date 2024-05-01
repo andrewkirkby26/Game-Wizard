@@ -1,0 +1,394 @@
+/* Large */
+@media (min-aspect-ratio: 1/1) {
+    .halfWidth {
+        width: calc(50%) !important;
+    }
+    
+    .thirdWidth {
+        width: calc(33.33%) !important;
+    }
+
+    .twoThirdsWidth {
+        width: calc(66.66%) !important;
+    }
+
+    .twoFifthsWidth {
+        width: calc(40%) !important;
+    }
+
+    .threeFifthsWidth {
+        width: calc(60%) !important;
+    }
+    
+    .quarterWidth {
+        width: calc(25%) !important;
+    }
+
+    .threeQuarterWidth {
+        width: calc(75%) !important;
+    }
+    .eighthWidth {
+        width: calc(12.5%) !important;
+    }
+}
+
+/* Small */
+@media (max-aspect-ratio: 1/1) {
+    /* These are 100% intentially as "halfWidth" and all smaller ones are impossible too see on a mobile */
+    /* .halfWidth {
+        width: calc(100%) !important;
+    }
+    
+    .thirdWidth {
+        width: calc(100%) !important;
+    }
+
+    .twoThirdsWidth {
+        width: calc(100%) !important;
+    }
+    
+    .quarterWidth {
+        width: calc(100%) !important;
+    }
+    .eighthWidth {
+        width: calc(100%) !important;
+    }
+
+    .twoFifthsWidth {
+        width: calc(100% - .5rem) !important;
+    }
+
+    .threeFifthsWidth {
+        width: calc(100%) !important;
+    }
+
+    .threeQuarterWidth {
+        width: calc(100%) !important;
+    } */
+
+    .halfWidth {
+        width: calc(50%) !important;
+    }
+    
+    .thirdWidth {
+        width: calc(33.33%) !important;
+    }
+
+    .twoThirdsWidth {
+        width: calc(66.66%) !important;
+    }
+
+    .twoFifthsWidth {
+        width: calc(40%) !important;
+    }
+
+    .threeFifthsWidth {
+        width: calc(60%) !important;
+    }
+    
+    .quarterWidth {
+        width: calc(25%) !important;
+    }
+
+    .threeQuarterWidth {
+        width: calc(75%) !important;
+    }
+    .eighthWidth {
+        width: calc(12.5%) !important;
+    }
+}
+
+.clickable {
+    text-decoration: underline;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.color-purple {
+    color: var(--purple);
+}
+
+.color-white {
+    color: var(--white);
+}
+
+.color-red {
+    color: var(--warn);
+}
+
+.color-green {
+    color: var(--green);
+}
+
+.color-gray {
+    color: var(--gray);
+}
+
+.floatRight {
+    float:right !important;
+}
+
+.floatLeft {
+    float:left !important;
+}
+
+.center {
+    display:inline-block !important;
+    float:none !important;
+}
+
+.noFloat {
+    float:unset !important;
+}
+
+.noBorder {
+    border: none !important;
+}
+
+.italic {
+    font-style: italic !important;
+}
+
+.displayFlex {
+    float:unset !important;
+    display: flex !important;
+}
+
+.displayInline {
+    float:unset !important;
+    display: inline-block !important;
+}
+
+.displayBlock {
+    display: block !important;
+}
+
+.displayUnset {
+    display: unset !important;
+}
+
+
+.noOverflow {
+    overflow: unset !important;
+}
+
+.positionRelative {
+    position:relative !important;
+}
+
+.positionAbsolute {
+    position:absolute !important;
+}
+
+.positionFixed {
+    position:fixed !important;
+}
+
+.leftText {
+    text-align: left !important;
+}
+
+.centerText {
+    text-align: center !important;
+}
+
+.rightText {
+    text-align: right !important;
+}
+
+.autoWidth {
+    width: auto !important;
+}
+
+.noMaxWidth {
+    max-width: unset !important;
+}
+
+.noMinWidth {
+    min-width: unset !important;
+}
+
+.fullWidth {
+    width: calc(100%) !important;
+}
+
+.fullWidthWithMargin {
+    width: calc(100% - .5rem) !important;
+    margin: .25rem !important;
+}
+
+.noMaxHeight {
+    max-height: unset !important;
+}
+
+.noMinHeight {
+    min-height: unset !important;
+}
+
+.autoHeight {
+    height: auto !important;
+    line-height: unset !important;
+}
+
+.fullHeight {
+    height: calc(100%) !important;
+    max-height: unset !important;
+}
+
+.thirdHeight {
+    height: calc(33.33%) !important;
+    max-height: unset !important;
+}
+
+.twoThirdsHeight {
+    height: calc(66.66%) !important;
+    max-height: unset !important;
+}
+
+.underline {
+    text-decoration: underline !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.fontExtraExtraSmall {
+    font-size: .8rem !important;
+}
+
+.fontExtraSmall {
+    font-size: 1rem !important;
+}
+
+.fontSmall {
+    font-size: 1.2rem !important;
+}
+
+.fontMedium {
+    font-size: 1.5rem !important;
+}
+
+.fontLarge {
+    font-size: 2rem !important;
+}
+
+.fontExtraLarge {
+    font-size: 2.3rem !important;
+}
+
+.trimTextOverflow {
+    overflow: hidden;
+    white-space: nowrap;    
+    text-overflow: ellipsis;
+}
+
+.reverseTrimTextOverflow {
+    direction: rtl;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;    
+    text-overflow: ellipsis;
+}
+
+.noPadding {
+    padding:unset !important;
+}
+
+.noMargin {
+    margin:unset !important;
+}
+
+.smallMargin {
+    margin-left: .25rem !important;
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
+.boxShadowInset {
+    box-shadow:0.2rem 0 0.4rem 0.1rem rgb(0 0 0 / 30%) inset;
+}
+
+.boxShadow{
+    box-shadow:0.2rem 0 0.4rem 0.1rem rgb(0 0 0 / 30%);
+}
+
+.correctImage {
+    text-align:center;
+    max-width: 100%;
+    background-size: contain;
+}
+
+.green-chip {
+    background-color: var(--green) !important;
+    color: var(--white) !important;
+}
+
+.gray-chip {
+    background-color: var(--gray) !important;
+    color: var(--white) !important;
+}
+
+.red-chip {
+    background-color: var(--warn) !important;
+    color: var(--white) !important;
+}
+
+.blue-chip {
+    background-color: var(--dark-accent) !important;
+    color: var(--white) !important;
+}
+
+
+.middleHeight {
+    margin-top: 10%;
+}
+
+.purple-chip {
+    background-color: var(--purple) !important;
+    color: var(--white) !important;
+}
+
+.info_container {
+    float:left;
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin-bottom:.2rem;
+}
+
+.info_label {
+    color: var(--dark-accent);
+    float: left;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.info_value {
+    float: left;
+    margin-left: .1rem;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.fixedWidthFont {
+    font-family: 'Monospace' !important;
+}
+
+.info_url {
+    float: left;
+    margin-left: .3rem;
+    margin-top:-.1rem;
+    margin-bottom: -.2rem;
+    position: relative;
+    width: auto;
+    height: auto;
+    color: var(--dark-accent);
+    text-decoration: underline; 
+}

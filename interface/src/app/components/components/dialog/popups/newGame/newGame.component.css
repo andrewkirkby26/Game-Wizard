@@ -1,0 +1,64 @@
+.container {
+    width: 80vw;
+    height: auto;
+}
+
+.boardListContainer {
+    float: left;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.board {
+    float: left;
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+
+.userRow {
+    float:left;
+    height: 3rem;
+    position: relative;
+    width: 100%;
+    font-size: 1.2rem;
+    border-bottom: 1px solid gray;
+    line-height: 3rem;
+    font-weight: 600;
+}
+
+.userRow:hover {
+    cursor: pointer;
+}
+
+.characterListContainer {
+    float: left;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.characterDescriptionContainer {
+    float: left;
+    width: 100%;
+    height: 15rem;
+    position: relative;
+}
+
+.characterCircle {
+    margin: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    float: left;
+    transform-origin: center;
+    transition: all .2s;
+}
+
+.characterCircle:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

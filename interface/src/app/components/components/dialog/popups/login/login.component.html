@@ -1,0 +1,41 @@
+<mat-card class="popup_wrapper">
+<!--    <mat-card-header >-->
+<!--      <mat-card-title >{{LangUtil.getScript(LangConstants.LOGIN)}}</mat-card-title>-->
+<!--      &lt;!&ndash; <mat-card-subtitle>Subtitle</mat-card-subtitle> &ndash;&gt;-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content  >-->
+<!--        &lt;!&ndash; Username &ndash;&gt;-->
+<!--        <form  (submit)="login()">-->
+<!--            <mat-form-field class="fullWidth positionRelative floatLeft autoHeight">-->
+<!--                <mat-label>{{LangUtil.getScript(LangConstants.USERNAME)}}</mat-label>-->
+<!--                <mat-icon matPrefix>person</mat-icon>-->
+<!--                <input  [formControl]="username" matInput #value (keydown)='$event.key == "Enter" ? passwordInput.focus() : null' class="fullWidth positionRelative floatLeft" (change)='username.setValue(value.value)' [placeholder]="LangUtil.getScript(LangConstants.USERNAME) + '...'" type="text">-->
+<!--                <mat-icon matSuffix class="fontSmall mat-gray" (click)="username.setValue('')">cancel</mat-icon>-->
+<!--                &lt;!&ndash; <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> &ndash;&gt;-->
+<!--                <mat-error *ngIf="username.errors">-->
+<!--                    {{username.errors['label']}}-->
+<!--                </mat-error>-->
+<!--            </mat-form-field>-->
+<!--            &lt;!&ndash; Password &ndash;&gt;-->
+<!--            <mat-form-field class="fullWidth positionRelative floatLeft autoHeight">-->
+<!--                <mat-label>{{LangUtil.getScript(LangConstants.PASSWORD)}}</mat-label>-->
+<!--                <mat-icon matPrefix>lock</mat-icon>-->
+<!--                <input [formControl]="password" #passwordInput matInput (keydown)='$event.key == "Enter" ? login() : null' class="fullWidth positionRelative floatLeft" (change)='password.setValue(passwordInput.value)' [placeholder]="LangUtil.getScript(LangConstants.PASSWORD) + '...'" type="password">-->
+<!--                <mat-icon *ngIf="passwordInput.type == 'text'" style='margin-top: 1.2rem;' matSuffix (click)="passwordInput.type = 'password'" class="fontSmall mat-gray">visibility_off</mat-icon>-->
+<!--                <mat-icon *ngIf="passwordInput.type == 'password'"style='margin-top: .2rem;'  matSuffix (click)="passwordInput.type = 'text'" class="fontSmall mat-gray">visibility</mat-icon>-->
+<!--                <mat-icon matSuffix (click)="password.setValue('')"  class="fontSmall mat-gray" style='margin-top: -1rem;'>cancel</mat-icon>-->
+<!--                &lt;!&ndash; <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint> &ndash;&gt;-->
+<!--                <mat-error *ngIf="password.errors">-->
+<!--                    {{password.errors['label']}}-->
+<!--                </mat-error>-->
+<!--            </mat-form-field>-->
+<!--&lt;!&ndash;            <input hidden type="submit"/>&ndash;&gt;-->
+<!--        </form>-->
+<!--    </mat-card-content>-->
+<!--    <mat-card-actions align="end">-->
+<!--        <button *ngIf='!loading' mat-raised-button class="popup_button" (click)='login()' color="primary">{{LangUtil.getScript(LangConstants.LOGIN)}}</button>-->
+<!--    </mat-card-actions>-->
+<!--    <mat-card-footer>-->
+<!--        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>-->
+<!--    </mat-card-footer>-->
+</mat-card>

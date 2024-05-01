@@ -1,0 +1,53 @@
+<mat-card class="popup_wrapper">
+    <mat-stepper linear #stepper>
+        <mat-step [stepControl]="gameSetupStep" >
+            <form [formGroup]="gameSetupStep">
+                <mat-form-field class="fullWidth">
+                    <mat-label>Game Name</mat-label>
+                    <input matInput #gameName formControlName="firstCtrl" required (change)="game.config.name = gameName.value"/>
+                </mat-form-field>
+                <mat-form-field class="fullWidth">
+                    <mat-label>Number of Players</mat-label>
+                    <mat-select #numPlayers (selectionChange)="game.config.totalNumPlayers = numPlayers.value">
+                        <mat-option  [value]="3">
+                            3
+                        </mat-option>
+                        <mat-option  [value]="4">
+                            4
+                        </mat-option>
+                        <mat-option  [value]="5">
+                            5
+                        </mat-option>
+                        <mat-option  [value]="6">
+                            6
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint>3-6 Players Required</mat-hint>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button matStepperNext color="primary" class="floatRight" [disabled]="!gameSetupStep.valid">Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="inviteStep">
+            <form [formGroup]="inviteStep">
+                <ng-template matStepLabel>Invite Players</ng-template>
+                <div class="boardListContainer">
+                    <mat-selection-list #inviteList>
+                        <div *ngFor='let user of authenticationService.allUsers'>
+                            <mat-list-option  *ngIf='user._id != authenticationService.user?._id' [value]="user._id">
+                                {{user.displayName}}
+                            </mat-list-option>
+                        </div>
+                    </mat-selection-list>
+                    <br>
+                    <span *ngIf="(game.config.totalNumPlayers - inviteList.selectedOptions.selected.length - 1) > 0">{{game.config.totalNumPlayers - inviteList.selectedOptions.selected.length - 1}} CPUs will be automatically added</span>
+                </div>
+                <div>
+                    <button mat-raised-button matStepperPrevious class="floatLeft">Back</button>
+                    <button mat-raised-button matStepperNext color="primary" class="floatRight" (click)="finishGame()">Finish</button>
+                </div>
+            </form>
+        </mat-step>
+    </mat-stepper>
+</mat-card>

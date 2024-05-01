@@ -1,1 +1,1 @@
-# Game-Wizard
+# game-wizard

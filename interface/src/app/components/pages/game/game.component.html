@@ -1,0 +1,28 @@
+<div class="pageContainer centerText" *ngIf="gameService.currentGame && gameService.currentGame.getCurrentRound() && authenticationService.user">
+
+    <player *ngFor="let player of gameService.currentGame.getCurrentRound()!.players;" [player]="player" [index]="player.index"
+            [active]='player.getPlayerId() == gameService.currentGame.activePlayerId || player.getPlayerId() == authenticationService.user._id' ></player>
+
+    <div class="extras">
+        <div class="extra_child" *ngIf='gameService.currentGame?.getCurrentRound()!.trumpCard'>
+            <card [forceVisible]='true' [big]='false' [card]="gameService.currentGame!.getCurrentRound()!.trumpCard"></card>
+            <div class="label">Trump</div>
+<!--            <mat-icon class="icon" >emoji_events</mat-icon>-->
+        </div>
+        <div class="extra_child"  *ngIf='gameService.currentGame?.getCurrentRound()?.getDiscard()' >
+            <card class="hover" *ngIf=" gameService.currentGame!.getCurrentRound()!.getDiscard()!.length > 0" (click)="navigationService.showDialogByName(Constants.DIALOG_DISCARD)" [forceVisible]='true' [big]='false' [card]="gameService.currentGame!.getCurrentRound()!.getDiscard()![gameService.currentGame!.getCurrentRound()!.getDiscard().length - 1]!"></card>
+<!--            <mat-icon class="icon hover" (click)="navigationService.showDialogByName(Constants.DIALOG_DISCARD)">delete_forever</mat-icon>-->
+            <div class="label">Discard</div>
+        </div>
+
+        <div class="roundLabel">Round {{gameService.currentGame.getCurrentRound()!.number + 1 }} of {{gameService.currentGame.config.getTotalNumRounds()}}</div>
+
+        <playedCards></playedCards>
+    </div>
+
+    <hand [player]='gameService.currentGame.getCurrentRound()!.getPlayerById(authenticationService.user._id!)' class="player_hand_container"></hand>
+
+    <div class="chatIcon" >
+        <mat-icon class="icon hover" style="font-size: 1.6rem; margin-top: 1rem" (click)="navigationService.toggleChat()" [matBadge]="numChats()">question_answer</mat-icon>
+    </div>
+</div>

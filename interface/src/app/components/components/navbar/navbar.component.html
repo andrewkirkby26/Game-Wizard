@@ -1,0 +1,22 @@
+<div class="navbar" @slideIn>
+    <mat-icon *ngIf='navigationService.getCurrentRoute() != Constants.ROUTE_HOME' class="back_button hover" (click)="navigationService.jumpHome()">arrow_back</mat-icon>
+    <mat-icon *ngIf='gameService.currentGame' class="delete_button hover" (click)="deleteGame()">delete</mat-icon>
+
+    <div *ngIf='gameService.currentGame' class="user_message">
+        {{gameService.currentGame.status.getUserMessage()}}
+    </div>
+
+    <div class="user_container">
+        <mat-icon *ngIf="!authenticationService.initialized" class="spinner icon">loop</mat-icon>
+        <mat-icon *ngIf="!authenticationService.user && authenticationService.initialized" class='hover icon' style='margin-top: -3.7rem !important;' (click)="authenticationService.login()">login</mat-icon>
+        <mat-icon *ngIf="authenticationService.user && !authenticationService.user.photoURL" class='hover icon' [matMenuTriggerFor]="userMenu" >person</mat-icon>
+        <img *ngIf='authenticationService.user && authenticationService.user.photoURL' class='hover' [matMenuTriggerFor]="userMenu"  [src]="authenticationService.user.photoURL" alt="Nada"/>
+        <!--            <span class='hover' (click)="authenticationService.login()">Login</span>-->
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="authenticationService.logout() ">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>

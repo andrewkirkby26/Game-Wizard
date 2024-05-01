@@ -1,0 +1,4 @@
+<mat-icon *ngIf="snack.level == Constants.SNACKBAR_GOOD" color="green">done</mat-icon>
+<mat-icon *ngIf="snack.level == Constants.SNACKBAR_WARN" color="orange">notification_important</mat-icon>
+<mat-icon *ngIf="snack.level == Constants.SNACKBAR_ERROR" color="warn">warning</mat-icon>
+<div class="floatLeft positionRelative"><b>{{snack.message}}</b></div>

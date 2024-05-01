@@ -1,0 +1,3 @@
+<div *ngIf='gameService.currentGame?.getCurrentRound()?.getCurrentPoint()' class="container" >
+    <card *ngFor='let card of gameService.currentGame?.getCurrentRound()!.getCurrentPoint()!.playedCards; let i = index' class="large" [forceVisible]='true' [big]='true' [card]="card"></card>
+</div>
